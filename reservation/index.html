@@ -11,8 +11,8 @@
 
 </head>
 
-<body>
-    <header>
+<body class="body">
+    <header class="header">
         <a href="../index.html">
             <p><img src="../images/logo-jacana.png" alt=""></p>
             <p class="titre">Auberge du jacana africain</p>
@@ -30,11 +30,11 @@
                 </legend>
                 <p>
                     <label class="labelBtnDate" for="date-arrivee">Date d'arrivée :</label>
-                    <input class="btnDate" type="date" id="date-arrivee" name="date-arrivee">
+                    <input class="btnDate" type="date" id="date-arrivee" name="date-arrivee" required>
                 </p>
                 <p>
                     <label class="labelBtnDate" for="date-depart">Date de départ :</label>
-                    <input class="btnDate" type="date" id="date-depart" name="date-depart">
+                    <input class="btnDate" type="date" id="date-depart" name="date-depart" required>
                 </p>
                 <p>
                     <button class="btnValider" type="button" id="check-availability-button">Vérifier la
@@ -42,7 +42,6 @@
                 </p>
                 <p id="availability-message"></p>
 
-                </div>
             </fieldset>
             <br>
             <fieldset class="ctnValidation">
@@ -51,7 +50,7 @@
                 </legend>
                 <label class="btnNbLabel" for="nbAdultes">Adultes (maximum 4):</label>
                 <select class="btnNb__select" name="nbAdultes" id="nbAdultes">
-                    <optgroup>
+                    <optgroup label="nbAdultes">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -61,8 +60,9 @@
 
 
                 <label class="btnNbLabel" for="nbEnfants">Enfants (maximum 5):</label>
-                <select class="btnNb__select" name="nbEnfants">
-                    <optgroup>
+                <select class="btnNb__select" name="nbEnfants" id="nbEnfants">
+                    <optgroup label="nbEnfants">
+                        <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">3</option>
                         <option value="3">3</option>
@@ -75,7 +75,7 @@
                     1. la chambre familiale peut loger jusqu'à 6 personnes<br>
                     2. si vous avez besoin de louer plusieurs chambres, <a href="">contactez-nous directement</a>
                 </p>
-                </div>
+            
             </fieldset>
             <br>
             <fieldset class="ctnValidation">
@@ -84,8 +84,8 @@
                 </legend>
                 <ul class="listeBtnRadio">
                     <li class=listeBtnRadio__item>
-                        <input class="listeBtnRadio__btn screen-reader-only" type="radio" name="btnRadio" id="btnRadio1"
-                            value="chambreSimple">
+                        <input class="listeBtnRadio__btn screen-reader-only" type="radio" name="btnRadio" id="chambreSimple"
+                            value="chambreSimple" required>
                         <label class="listeBtnRadio__label" for="chambreSimple">
                             <img class="listeBtnImage__img" src="../images/types-de-chambre/1-lit-double.webp"
                                 alt="Chambre simple avec lit">
@@ -93,24 +93,26 @@
                         </label>
                     </li>
                     <li class="listeBtnRadio__item">
-                        <input class="listeBtnRadio__btn screen-reader-only" type="radio" name="btnRadio" id="btnRadio2"
+                        <input class="listeBtnRadio__btn screen-reader-only" type="radio" name="btnRadio" id="chambreDouble"
                         value="chambreDouble">
                     <label class="listeBtnRadio__label" for="chambreDouble">
                         <img class="listeBtnImage__img" src="../images/types-de-chambre/2-lits-double.jpg"
                             alt="Chambre avec lit double.">
                         <span class="listeBtnImage__span">Chambre avec lit double</span>
-                    </li>
+                    </label>
+                        </li>
                     <li class="listeBtnRadio__item">
-                        <input class="listeBtnRadio__btn screen-reader-only" type="radio" name="btnRadio" id="btnRadio3"
+                        <input class="listeBtnRadio__btn screen-reader-only" type="radio" name="btnRadio" id="chambreFamiliale"
                         value="chambreFamiliale">
                     <label class="listeBtnRadio__label" for="chambreFamiliale">
                         <img class="listeBtnImage__img" src="../images/types-de-chambre/chambre-familiale.jpg"
                             alt="Chambre familiale.">
                         <span class="listeBtnImage__span">Chambre familiale.</span>
+                        </label>
                     </li>
                 </ul>
-
-
+                <input type="checkbox" name="dejeuner" id="dejeuner">
+                <label>Inclure le petit déjeuner.</label>
                 <!-- Trois boutons radio pour le choix du type de chambre simple, double ou familiale 
                 Les boutons doivent être des images cliquables: utiliser images/types-de-chambre -->
 
@@ -127,23 +129,24 @@
                     <h2 class="sectionTitre">4. Identification</h2>
                 </legend>
                 <ul class="listeInfos">
-                    <li class="listeInfos__item"> <label class="listeInfos__label">Prénom :</label>
-                        <input class="listeInfos__champ" id="prenom" name="prenom">
+                    <li class="listeInfos__item"> <label class="listeInfos__label" for="prenom"  >Prénom :</label>
+                        <input class="listeInfos__champ" id="prenom" name="prenom" minlength="3" required pattern="[a-zA-ZÀ-ÿ \-]+">
                     </li>
-                    <br>
-                    <li class="listeInfos__item"> <label class="listeInfos__label">Nom :</label>
-                        <input class="listeInfos__champ" id="nom" name="nom">
+                    <li class="listeInfos__item"> <label class="listeInfos__label" for="nom">Nom :</label>
+                        <input class="listeInfos__champ" id="nom" name="nom" pattern="[a-zA-ZÀ-ÿ \-]+" required>
                     </li>
-                    <br>
-                    <li class="listeInfos__item"><label class="listeInfos__label">Email :</label>
-                        <input class="listeInfos__champ" id="email" name="email">
+                    <li class="listeInfos__item"><label class="listeInfos__label" for="email">Email :</label>
+                        <input class="listeInfos__champ" type="email" id="email" name="email" required>
                     </li>
-                    <br>
-                    <li class="listeInfos__item"> <label class="listeInfos__label">Téléphone :</label>
-                        <input class="listeInfos__champ" id="telephone" name="telephone">
+                    <li class="listeInfos__item"> <label class="listeInfos__label" for="telephone">Téléphone :</label>
+                        <input class="listeInfos__champ" type="number" id="telephone" name="telephone" required>
                     </li>
                 </ul>
             </fieldset>
+            <br>
+            <input type="checkbox" name="infolettre" id="infolettre">
+            <label for="infolettre">Je souhaite recevoir de la documentation par email.</label>
+         
 
             <p><button class="btnValider" type="submit">Confirmer la réservation</button></p>
         </form>
