@@ -12,39 +12,185 @@
 </head>
 
 <body class="body">
-    <header class="header">
+    <a href="#contenu" class="screen-reader-only focusable">Aller au contenu</a>
+    <header class="header" role="banner">
         <a href="../index.html">
             <p><img src="../images/logo-jacana.png" alt=""></p>
             <p class="titre">Auberge du jacana africain</p>
         </a>
         <!-- Ajouter un menu : Accueil, Historique, Région, Contact, Réservation -->
-        <p> <a href="../index.html">accueil</a> | <a href="index.html">réservation</a>
+       
+        <nav class="nav">
+            <ul class="nav__list rangee">
+                <li class="nav__list-item">
+                    <a href="index.html" class="nav__link nav__link--active">Accueil</a>
+                </li>
+                <li class="nav__list-item"> <a href="#" class="nav__link">Historique</a> </li>
+                <li class="nav__list-item"> <a href="#" class="nav__link">Région</a>
+                </li>
+                <li class="nav__list-item"> <a href="reservation/index.html" class="nav__link">Réservation</a> </li>
+                <li class="nav__list-item"> <a href="#" class="nav__link">Contact</a> </li>
+            </ul>
+        </nav>
     </header>
 
-    <main class="main">
+    <main id="contenu" class="main" role="main">
         <h1 class="titre">Réservation</h1>
-        <form class="form" id="reservation-form" action="reservation.html" method="post">
-            <fieldset class="ctnValidation">
+        <form class="form" id="reservation-form" action="reservation.html" method="post" role="form">
+            <fieldset class="date-arrivee ctnValidation">
                 <legend class="legend">
-                    <h2 class="sectionTitre">1. Vérifier la disponibilité</h2>
+                    <h2 class="sectionTitre">1. Arrivée</h2>
                 </legend>
-                <p>
-                    <label class="labelBtnDate" for="date-arrivee">Date d'arrivée :</label>
-                    <input class="btnDate" type="date" id="date-arrivee" name="date-arrivee" required>
-                </p>
-                <p>
-                    <label class="labelBtnDate" for="date-depart">Date de départ :</label>
-                    <input class="btnDate" type="date" id="date-depart" name="date-depart" required>
-                </p>
-                <p>
-                    <button class="btnValider" type="button" id="check-availability-button">Vérifier la
-                        disponibilité</button>
-                </p>
-                <p id="availability-message"></p>
+                <div class="disponibilite__date">
+                    <!-- <label for="jour-arrivee">jour</label> -->
+                    <select id="jour-arrivee" name="jour-arrivee" required>
+                        <option label="jour"></option>
+                        <!-- option[value=$]{$}*31 -->
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+                    <!-- <input type="number" id="jour-arrivee" name="jour-arrivee" min="1" max="31"> -->
 
+                    <!-- <label for="mois-arrivee">mois</label> -->
+                    <select id="mois-arrivee" name="mois-arrivee" required>
+                        <option label="mois"></option>
+                        <!-- option[value=janvier]{janvier}*12 -->
+                        <option value="1">janvier</option>
+                        <option value="2">février</option>
+                        <option value="3">mars</option>
+                        <option value="4">avril</option>
+                        <option value="5">mai</option>
+                        <option value="6">juin</option>
+                        <option value="7">juillet</option>
+                        <option value="8">août</option>
+                        <option value="9">septembre</option>
+                        <option value="10">octobre</option>
+                        <option value="11">novembre</option>
+                        <option value="12">décembre</option>
+                    </select>
+                    <!-- <input type="number" id="mois-arrivee" name="mois-arrivee" min="1" max="12"> -->
+
+                    <!-- <label for="annee-arrivee">annee</label> -->
+                    <select id="annee-arrivee" name="annee-arrivee" required>
+                        <option label="année"></option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                    </select>
+                    <!-- <input type="number" id="annee-arrivee" name="annee-arrivee" min="2023" max="2024"> -->
+
+                </div>
+                <p class="erreur">
+                    <span>
+                        <span class="screen-reader-only">Avertissement</span>
+                        <span class="icone icone--avertissement" aria-hidden="true"></span>
+                    </span>
+                </p>
             </fieldset>
+            <fieldset class="date-depart ctnvalidation">
+                <legend>
+                    <h3>Départ&#8239;:</h3>
+                </legend>
+                <div class="disponibilite__date">
+                    <select id="jour-depart" name="jour-depart" required>
+                        <option label="jour"></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+
+                    <select id="mois-depart" name="mois-depart" required>
+                        <option label="mois"></option>
+                        <option value="1">janvier</option>
+                        <option value="2">février</option>
+                        <option value="3">mars</option>
+                        <option value="4">avril</option>
+                        <option value="5">mai</option>
+                        <option value="6">juin</option>
+                        <option value="7">juillet</option>
+                        <option value="8">août</option>
+                        <option value="9">septembre</option>
+                        <option value="10">octobre</option>
+                        <option value="11">novembre</option>
+                        <option value="12">décembre</option>
+                    </select>
+                    <select id="annee-arrivee" name="annee-arrivee" required>
+                        <option label="année"></option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                    </select>
+                    <p class="erreur">
+                        <span>
+                            <span class="screen-reader-only">Avertissement</span>
+                            <span class="icone icone--avertissement" aria-hidden="true"></span>
+                        </span>
+                    </p>
+                </div>
+            </fieldset>
+            </div>
+            <p class="disponibilite__check">
+                <button type="button" id="check-availability-button">Vérifier la
+                    disponibilité</button>
+            </p>
+
             <br>
-            <fieldset class="ctnValidation">
+            <fieldset class=" nbPersonnes ctnValidation">
                 <legend class="legend">
                     <h2 class="SectionTitre">2. Nombre de personnes</h2>
                 </legend>
@@ -75,17 +221,17 @@
                     1. la chambre familiale peut loger jusqu'à 6 personnes<br>
                     2. si vous avez besoin de louer plusieurs chambres, <a href="">contactez-nous directement</a>
                 </p>
-            
+
             </fieldset>
             <br>
-            <fieldset class="ctnValidation">
+            <fieldset class="choixChambre ctnValidation">
                 <legend class="legend">
                     <h2 class="sectionTitre">3. Choix chambre et forfait </h2>
                 </legend>
                 <ul class="listeBtnRadio">
                     <li class=listeBtnRadio__item>
-                        <input class="listeBtnRadio__btn screen-reader-only" type="radio" name="btnRadio" id="chambreSimple"
-                            value="chambreSimple" required>
+                        <input class="listeBtnRadio__btn screen-reader-only" type="radio" name="btnRadio"
+                            id="chambreSimple" value="chambreSimple" required>
                         <label class="listeBtnRadio__label" for="chambreSimple">
                             <img class="listeBtnImage__img" src="../images/types-de-chambre/1-lit-double.webp"
                                 alt="Chambre simple avec lit">
@@ -93,24 +239,30 @@
                         </label>
                     </li>
                     <li class="listeBtnRadio__item">
-                        <input class="listeBtnRadio__btn screen-reader-only" type="radio" name="btnRadio" id="chambreDouble"
-                        value="chambreDouble">
-                    <label class="listeBtnRadio__label" for="chambreDouble">
-                        <img class="listeBtnImage__img" src="../images/types-de-chambre/2-lits-double.jpg"
-                            alt="Chambre avec lit double.">
-                        <span class="listeBtnImage__span">Chambre avec lit double</span>
-                    </label>
-                        </li>
+                        <input class="listeBtnRadio__btn screen-reader-only" type="radio" name="btnRadio"
+                            id="chambreDouble" value="chambreDouble">
+                        <label class="listeBtnRadio__label" for="chambreDouble">
+                            <img class="listeBtnImage__img" src="../images/types-de-chambre/2-lits-double.jpg"
+                                alt="Chambre avec lit double.">
+                            <span class="listeBtnImage__span">Chambre avec lit double</span>
+                        </label>
+                    </li>
                     <li class="listeBtnRadio__item">
-                        <input class="listeBtnRadio__btn screen-reader-only" type="radio" name="btnRadio" id="chambreFamiliale"
-                        value="chambreFamiliale">
-                    <label class="listeBtnRadio__label" for="chambreFamiliale">
-                        <img class="listeBtnImage__img" src="../images/types-de-chambre/chambre-familiale.jpg"
-                            alt="Chambre familiale.">
-                        <span class="listeBtnImage__span">Chambre familiale.</span>
+                        <input class="listeBtnRadio__btn screen-reader-only" type="radio" name="btnRadio"
+                            id="chambreFamiliale" value="chambreFamiliale">
+                        <label class="listeBtnRadio__label" for="chambreFamiliale">
+                            <img class="listeBtnImage__img" src="../images/types-de-chambre/chambre-familiale.jpg"
+                                alt="Chambre familiale.">
+                            <span class="listeBtnImage__span">Chambre familiale.</span>
                         </label>
                     </li>
                 </ul>
+                <p class="erreur">
+                    <span>
+                        <span class="screen-reader-only">Avertissement</span>
+                        <span class="icone icone--avertissement" aria-hidden="true"></span>
+                    </span>
+                </p>
                 <input type="checkbox" name="dejeuner" id="dejeuner">
                 <label>Inclure le petit déjeuner.</label>
                 <!-- Trois boutons radio pour le choix du type de chambre simple, double ou familiale 
@@ -123,36 +275,66 @@
                     CAN.</p>
             </fieldset>
             <br>
-            <fieldset class="ctnValidation">
+            <fieldset class=" id ctnValidation">
 
                 <legend class="legend">
                     <h2 class="sectionTitre">4. Identification</h2>
                 </legend>
-                <ul class="listeInfos">
-                    <li class="listeInfos__item"> <label class="listeInfos__label" for="prenom"  >Prénom :</label>
-                        <input class="listeInfos__champ" id="prenom" name="prenom" minlength="3" required pattern="[a-zA-ZÀ-ÿ \-]+">
-                    </li>
-                    <li class="listeInfos__item"> <label class="listeInfos__label" for="nom">Nom :</label>
+                <div class="identification rangee">
+                    <p>
+                        <label class="listeInfos__label" for="prenom">Prénom :</label>
+                        <input class="listeInfos__champ" id="prenom" name="prenom" minlength="3" required
+                            pattern="[a-zA-ZÀ-ÿ \-]+">
+                    </p>
+                    <p class="erreur">
+                        <span>
+                            <span class="screen-reader-only">Avertissement</span>
+                            <span class="icone icone--avertissement" aria-hidden="true"></span>
+                        </span>
+                    </p>
+                    <p>
+                        <label class="listeInfos__label" for="nom">Nom :</label>
                         <input class="listeInfos__champ" id="nom" name="nom" pattern="[a-zA-ZÀ-ÿ \-]+" required>
-                    </li>
-                    <li class="listeInfos__item"><label class="listeInfos__label" for="email">Email :</label>
+                    </p>
+                    <p class="erreur">
+                        <span>
+                            <span class="screen-reader-only">Avertissement</span>
+                            <span class="icone icone--avertissement" aria-hidden="true"></span>
+                        </span>
+                    </p>
+                    <p>
+                        <label class="listeInfos__label" for="email">Email :</label>
                         <input class="listeInfos__champ" type="email" id="email" name="email" required>
-                    </li>
-                    <li class="listeInfos__item"> <label class="listeInfos__label" for="telephone">Téléphone :</label>
+                    </p>
+                    <p class="erreur">
+                        <span>
+                            <span class="screen-reader-only">Avertissement</span>
+                            <span class="icone icone--avertissement" aria-hidden="true"></span>
+                        </span>
+                    </p>
+                    <p>
+                        <label class="listeInfos__label" for="telephone">Téléphone :</label>
                         <input class="listeInfos__champ" type="number" id="telephone" name="telephone" required>
-                    </li>
-                </ul>
+                    </p>
+                    <p class="erreur">
+                        <span>
+                            <span class="screen-reader-only">Avertissement</span>
+                            <span class="icone icone--avertissement" aria-hidden="true"></span>
+                        </span>
+                    </p>
+                </div>
+
             </fieldset>
             <br>
             <input type="checkbox" name="infolettre" id="infolettre">
             <label for="infolettre">Je souhaite recevoir de la documentation par email.</label>
-         
+
 
             <p><button class="btnValider" type="submit">Confirmer la réservation</button></p>
         </form>
     </main>
     <hr>
-    <aside>
+    <aside role="complementary">
         <h2>Nous joindre</h2>
         <h3>aubergedujacana@gmail.com</h3>
         <p>
@@ -164,7 +346,7 @@
 
         </p>
     </aside>
-    <footer>
+    <footer class="footer" role="contentinfo">
         <!-- Intégrer les medias sociaux instagram et facebook + un bouton pour partager cette page -->
         <p>
             Ce site Web est un projet pédagogique réalisé par
@@ -174,6 +356,8 @@
             <a href="">Cégep de Sainte-Foy</a>.
         </p>
     </footer>
+    <script src="/js/menu.js"></script>
 </body>
+
 
 </html>
