@@ -15,11 +15,11 @@
     <a href="#contenu" class="screen-reader-only focusable">Aller au contenu</a>
     <header class="header" role="banner">
         <a href="../index.html">
-            <p><img src="../images/logo-jacana.png" alt=""></p>
-            <p class="titre">Auberge du jacana africain</p>
+            <p class="img-conteneur"><img class="header__img" src="../images/logo-jacana.png" alt=""></p>
+            <p class="titre-site">Auberge du jacana africain</p>
         </a>
         <!-- Ajouter un menu : Accueil, Historique, Région, Contact, Réservation -->
-       
+
         <nav class="nav">
             <ul class="nav__list rangee">
                 <li class="nav__list-item">
@@ -228,32 +228,39 @@
                 <legend class="legend">
                     <h2 class="sectionTitre">3. Choix chambre et forfait </h2>
                 </legend>
-                <ul class="listeBtnRadio">
+                <ul class="listeBtnRadio rangee">
                     <li class=listeBtnRadio__item>
                         <input class="listeBtnRadio__btn screen-reader-only" type="radio" name="btnRadio"
                             id="chambreSimple" value="chambreSimple" required>
                         <label class="listeBtnRadio__label" for="chambreSimple">
-                            <img class="listeBtnImage__img" src="../images/types-de-chambre/1-lit-double.webp"
-                                alt="Chambre simple avec lit">
-                            <span class="listeBtnImage__span">Chambre Simple</span>
+                            <picture>
+                                <img class="listeBtnImage__img img1" src="../images/types-de-chambre/1-lit-double.webp"
+                                    alt="Chambre simple avec lit">
+                                <span class="listeBtnImage__span">Chambre Simple</span>
+                            </picture>
                         </label>
                     </li>
                     <li class="listeBtnRadio__item">
                         <input class="listeBtnRadio__btn screen-reader-only" type="radio" name="btnRadio"
                             id="chambreDouble" value="chambreDouble">
+
                         <label class="listeBtnRadio__label" for="chambreDouble">
-                            <img class="listeBtnImage__img" src="../images/types-de-chambre/2-lits-double.jpg"
-                                alt="Chambre avec lit double.">
-                            <span class="listeBtnImage__span">Chambre avec lit double</span>
+                            <picture>
+                                <img class="listeBtnImage__img img2" src="../images/types-de-chambre/2-lits-double.jpg"
+                                    alt="Chambre avec lit double.">
+                                <span class="listeBtnImage__span span2">Chambre avec lit double</span>
+                            </picture>
                         </label>
                     </li>
                     <li class="listeBtnRadio__item">
                         <input class="listeBtnRadio__btn screen-reader-only" type="radio" name="btnRadio"
                             id="chambreFamiliale" value="chambreFamiliale">
                         <label class="listeBtnRadio__label" for="chambreFamiliale">
-                            <img class="listeBtnImage__img" src="../images/types-de-chambre/chambre-familiale.jpg"
-                                alt="Chambre familiale.">
-                            <span class="listeBtnImage__span">Chambre familiale.</span>
+                            <picture>
+                                <img class="listeBtnImage__img" src="../images/types-de-chambre/chambre-familiale.jpg"
+                                    alt="Chambre familiale.">
+                                <span class="listeBtnImage__span">Chambre familiale.</span>
+                            </picture>
                         </label>
                     </li>
                 </ul>

@@ -9,15 +9,45 @@
 @import url(menu.css);
 
 
+/*ENTÊTE*/
+.header {
+background: linear-gradient(#F6D156,#F0495D);
+margin: 0;
+}
+.img-conteneur {
+  display:flex;
+  justify-content:center;
+ }
+ .header__img {
+  border:7px #CA3D00 solid;
+  border-radius:100%;
+  margin:0;
+ }
+ .titre-site {
+  text-align:center;
+  margin-top: 50px;
+  font-size: 3rem;
+  font-family:'BaskerVille', serif;
+  color:black;
+ }
 
 /*BOUTONS RADIOS*/
 
- 
+
 .listeBtnRadio {
     list-style: none;
     display:flex;
-    flex-direction:row;
-    justify-content: space-between;   
+    flex-direction: column;
+    align-items:center;
+    margin-left:-35px;
+    margin-right:10px;   
+}
+
+.listeBtnImage__img {
+width:430px;
+}
+.img1{
+height: 270px;
 }
 .listeBtnRadio__item {
     flex-basis: 33%;
@@ -36,9 +66,25 @@
   text-align:center;
    
 }
+@media(min-width:600px) {
+  .listeBtnRadio {
+    flex-direction:row;
+  }
+  .img1 {
+    height: 120px;
+  }
+  .img2 {
+    position:relative;
+    bottom:-11px;
+  }
+  .span2 {
+    position:relative;
+    bottom:-10px;
+  }
+}
 /*BODY*/
 
- .body {
+ .main {
   margin:20px;
  }
  .icone {
@@ -56,4 +102,35 @@
 
 .listeInfos {
   list-style:none;
+}
+.identification {
+  display:flex;
+  flex-direction:column;
+}
+.id {
+  padding-left:30px;
+}
+.listeInfos__label {
+  display:flex;
+}
+@media(min-width:700px) {
+  .identification {
+    flex-direction:row;
+  }
+}
+
+/*PARAGRAPHE ERREUR*/
+.erreur {
+  margin-bottom:0;
+}
+
+/*ASIDE*/
+
+aside {
+  margin:20px;
+}
+/*FOOTER*/
+
+footer {
+  margin:20px;
 }

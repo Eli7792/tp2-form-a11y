@@ -10,15 +10,19 @@
 
 /****** Base commune *******/
 
+
 /* Bouton du menu */
 .nav__control {
-    background-color: var(--couleur-bouton);
+    background-color: #7B062E;
 
     border: none;
     padding: 10px;
     min-width: 40px;
 
     float: right;
+}
+.nav__span {
+    color:white;
 }
 
 @media (min-width: 600px) {
@@ -76,7 +80,7 @@
 /* Liens du menu */
 .nav__link {
     color: var(--nav-color);
-    background-color: rgba(145, 0, 145, 0.2);
+    background-color: #7B062E;
     display: block;
     padding: 5px 10px;
     width: 100%;
